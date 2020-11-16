@@ -11,8 +11,11 @@ router.get("/", function(req, res) {
 })
 
 router.post("/api/burgers", function(req, res) {
-    burger.insertOne(req.body.name, function(result) {
+    let name = req.body.name;
+    burger.insertOne(name, function(result) {
         console.log(result);
+
+        res.redirect('back');
     })
 })
 
@@ -20,6 +23,8 @@ router.put("/api/burgers/:name", function(req, res) {
     var name = req.params.name;
     burger.updateOne(req.body.val, req.body.name, function(result) {
         console.log(result);
+        
+        res.redirect('back');
     })
 })
 

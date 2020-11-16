@@ -13,9 +13,7 @@ var orm = {
     },
 // Name stores the burger_name the user is creating
     insertOne: function(table, name, cb) {
-      var queryString = "INSERT INTO " + table + "(burger_name) VALUES (";
-      queryString+= name;
-      queryString += ") ";
+      var queryString = "INSERT INTO " + table + " (burger_name, devoured) VALUES ('" + name.toString() + "', false);";
 
       connection.query(
         queryString,
