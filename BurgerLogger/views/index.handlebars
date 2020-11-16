@@ -1,3 +1,55 @@
-<button>
-    Submit    
-</button>
+
+<div class="container">
+{{!-- Image and Title --}}
+    <div class="row">
+        <div class="col-md-12">
+            <img src="/assets/img/burger.png" alt="Burger">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 id="title">Eat-Da-Burger!</h1>
+        </div>
+    </div>
+    
+{{!-- Burger lists --}}
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="notEaten">
+                {{#each data}}
+                    {{#unless devoured}}
+                        <li>{{burger_name}}<button>Devour it!</button></li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <ul class="eaten">
+                {{#each data}}
+                    {{#if devoured}}
+                        <li>{{burger_name}}<button>Make another!</button></li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+{{!-- Submit form --}}
+    <div class="row">
+        <div class="col-md-12">
+            <form action="">
+
+                <label for="burgerinput">Enter a burger name and submit!</label>
+                <textarea name="burgerinput" cols="30" rows="10"></textarea>
+
+                <input type="submit">
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
