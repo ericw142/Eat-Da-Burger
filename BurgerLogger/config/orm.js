@@ -25,14 +25,14 @@ var orm = {
       )
     },
 // Val stores the boolean value the user is updating, name stores the burger_name
-    updateOne: function(table, val, name, cb) {
-      var queryString = "UPDATE " + table + " SET devoured = " + val + " WHERE burger_name = " + name;
+    updateOne: function(table, id, cb) {
+      var queryString = "UPDATE " + table + " SET devoured = !devoured WHERE id = " + id;
 
       connection.query(
         queryString,
         function(err, result) {
           if (err) throw err;
-
+          
           cb(result);
         }
       )

@@ -13,8 +13,9 @@ var burger = {
         }) 
     },
 // Val stores the boolean value the user is updating, name stores the burger_name
-    updateOne: function(val, name, cb) {
-        orm.updateOne("burgers", val, name, function(res) {
+    updateOne: function(id, cb) {
+        orm.updateOne("burgers", id, function(res) {
+            
             cb(res);
         })
     }
