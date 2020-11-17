@@ -1,15 +1,50 @@
 body {
     background-color: goldenrod;
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
 }
 
 #title {
-    color: rgb(230, 70, 22);
+    color: rgb(228, 59, 7);
 }
 
-.notEaten {
-
+.headerSection {
+    text-align: center;
 }
 
-.eaten {
-    
-}
+/* Lists */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+   
+  li {
+    border-bottom: 1px solid #ccc;
+    background: rgb(245, 189, 47);
+  }
+   
+  li:last-child {
+    border: none;
+  }
+
+  li:hover {
+    background: #f6f6f6;
+  }
+
+  .btn-success {
+      margin-left: 5%;
+  }
+
+  .btn-danger {
+      float: right;
+  }
+
+  /* Form */
+
+  .formSection {
+    margin-top: 20px;
+  }
+
+  label {
+    color: rgb(228, 59, 7);
+  }

@@ -1,7 +1,7 @@
 
 <div class="container">
 {{!-- Image and Title --}}
-    <div class="row">
+    <div class="row headerSection">
         <div class="col-md-12">
             <img src="/assets/img/burger.png" alt="Burger">
         </div>
@@ -19,7 +19,7 @@
             <ul class="notEaten">
                 {{#each data}}
                     {{#unless devoured}}
-                        <li>{{burger_name}}<button class="devouredToggle" data-id="{{this.id}}">Devour it!</button><button class="deleteBtn" data-id="{{this.id}}">X</button></li>
+                        <li>{{burger_name}} -- <button class="devouredToggle btn btn-success" data-id="{{this.id}}">Devour it!</button><button class="deleteBtn btn btn-danger" data-id="{{this.id}}">X</button></li>
                     {{/unless}}
                 {{/each}}
             </ul>
@@ -29,7 +29,7 @@
             <ul class="eaten">
                 {{#each data}}
                     {{#if devoured}}
-                        <li>{{burger_name}}<button class="devouredToggle" data-id="{{this.id}}">Make another!</button><button class="deleteBtn" data-id="{{this.id}}">X</button></li>
+                        <li>{{burger_name}} -- <button class="devouredToggle btn btn-success" data-id="{{this.id}}">Make another!</button><button class="deleteBtn btn btn-danger" data-id="{{this.id}}">X</button></li>
                     {{/if}}
                 {{/each}}
             </ul>
@@ -37,14 +37,14 @@
     </div>
 
 {{!-- Submit form --}}
-    <div class="row">
+    <div class="row formSection">
         <div class="col-md-12">
             <form action="/api/burgers" method="POST">
 
                 <label for="name">Enter a burger name and submit!</label>
-                <textarea name="name" cols="30" rows="10"></textarea>
+                <input type="text" name="name">
 
-                <input type="submit">
+                <input type="submit" class="btn btn-light">
 
             </form>
         </div>
