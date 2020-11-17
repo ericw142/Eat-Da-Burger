@@ -36,6 +36,19 @@ var orm = {
           cb(result);
         }
       )
+    },
+
+    deleteOne: function(table, deleteId, cb) {
+      var queryString = "DELETE FROM " + table + " WHERE id = " + deleteId;
+
+      connection.query(
+        queryString,
+        function(err, result) {
+          if (err) throw err;
+
+          cb(result);
+        }
+      )
     }
 
 }

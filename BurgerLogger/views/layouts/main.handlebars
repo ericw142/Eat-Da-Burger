@@ -16,7 +16,7 @@
 	</body>
 	<script>
 
-		$('button').on('click', function(event) {
+		$('.devouredToggle').on('click', function(event) {
 			event.preventDefault();
 
 			var id = $(this).data("id");
@@ -29,6 +29,20 @@
 					  location.assign("/");
    				}
     		});
+		})
+
+		$(".deleteBtn").on("click", function(event) {
+			event.preventDefault();
+
+			var deleteId = $(this).data("id");
+
+			$.ajax("/api/burgers/"+ deleteId, {
+				type: "DELETE",
+				success: function(response) {
+
+					location.assign("/");
+				}
+			});
 		})
 
 	</script>
